@@ -4,24 +4,12 @@ using System.Threading.Tasks;
 
 public partial class Player : Entity
 {
-    [Export]
-    public Label StateLabel;
 
-    [Export]
-    public StateMachine StateMachine;
+    public bool _isPlaying { get; private set; } = false;
 
     public override void _Ready()
     {
         base._Ready();
-
-    }
-
-
-    public override void _Process(double delta)
-    {
-        base._Process(delta);
-
-        StateLabel.Text = StateMachine.CurrentState.Name;
 
     }
 
@@ -30,5 +18,10 @@ public partial class Player : Entity
         base._PhysicsProcess(delta);
 
         MoveAndSlide();
+    }
+
+    public void SetPlayingStatus(bool isPlaying)
+    {
+        _isPlaying = isPlaying; 
     }
 }

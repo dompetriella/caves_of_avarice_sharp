@@ -3,9 +3,11 @@ using System;
 
 public abstract partial class Entity : CharacterBody2D
 {
+    public string Id = Guid.NewGuid().ToString();
 
     public override void _Ready()
     {
         base._Ready();
     }
+
 }

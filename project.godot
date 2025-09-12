@@ -19,6 +19,8 @@ config/icon="res://Assets/Images/icon.svg"
 
 AudioManager="*res://Common/Managers/AudioManager.cs"
 ScaffoldManager="*res://Common/Managers/ScaffoldManager.cs"
+NodeLocator="*res://Common/Managers/NodeLocator.cs"
+Game="*res://Game.cs"
 
 [display]
 
