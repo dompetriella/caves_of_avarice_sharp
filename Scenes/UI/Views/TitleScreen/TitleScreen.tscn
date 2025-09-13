@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dgpu2gs1npxhr"]
+[gd_scene load_steps=6 format=3 uid="uid://dgpu2gs1npxhr"]
 
+[ext_resource type="Script" uid="uid://dtaiu86bbt208" path="res://Scenes/UI/Views/TitleScreen/TitleScreen.cs" id="1_474j7"]
 [ext_resource type="Texture2D" uid="uid://dg1rs7kni3mxd" path="res://Assets/Themes/Backgrounds/DefaultBackground.tres" id="1_b76wr"]
+[ext_resource type="PackedScene" uid="uid://dbmxyb8swkssi" path="res://Scenes/UI/Views/AddPlayer/AddPlayer.tscn" id="2_v6qsf"]
 [ext_resource type="FontFile" uid="uid://sk0r5ytg65ro" path="res://Assets/Fonts/Ithaca-LVB75.ttf" id="2_wmtdy"]
 [ext_resource type="Theme" uid="uid://befu1x5a2206v" path="res://Assets/Themes/ApplicationTheme.tres" id="3_b5yjp"]
 
@@ -11,6 +13,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_474j7")
+NextPage = ExtResource("2_v6qsf")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 1
@@ -50,12 +54,14 @@ layout_mode = 2
 theme_override_constants/separation = 24
 
 [node name="StartButton" type="Button" parent="VBoxContainer/CenterContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("3_b5yjp")
 theme_override_font_sizes/font_size = 40
 text = "Start Game"
 
 [node name="SettingsButton" type="Button" parent="VBoxContainer/CenterContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("3_b5yjp")
 theme_override_font_sizes/font_size = 40

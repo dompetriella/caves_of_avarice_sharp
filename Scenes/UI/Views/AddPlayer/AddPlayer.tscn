@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dbmxyb8swkssi"]
+[gd_scene load_steps=4 format=3 uid="uid://dbmxyb8swkssi"]
 
 [ext_resource type="Texture2D" uid="uid://dg1rs7kni3mxd" path="res://Assets/Themes/Backgrounds/DefaultBackground.tres" id="1_tt7ls"]
 [ext_resource type="PackedScene" uid="uid://eenu6gcrv5vu" path="res://Scenes/UI/Views/AddPlayer/Widgets/PlayerSelectWidget/PlayerSelectWidget.tscn" id="2_brnoe"]
+[ext_resource type="Theme" uid="uid://befu1x5a2206v" path="res://Assets/Themes/ApplicationTheme.tres" id="3_brnoe"]
 
 [node name="AddPlayer" type="Control"]
 layout_mode = 3
@@ -27,6 +28,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 48
 alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
@@ -36,15 +38,26 @@ alignment = 1
 
 [node name="PlayerOne" parent="VBoxContainer/HBoxContainer" instance=ExtResource("2_brnoe")]
 layout_mode = 2
+PlayerIndex = 1
 
 [node name="PlayerTwo" parent="VBoxContainer/HBoxContainer" instance=ExtResource("2_brnoe")]
 layout_mode = 2
+PlayerIndex = 2
 
 [node name="PlayerThree" parent="VBoxContainer/HBoxContainer" instance=ExtResource("2_brnoe")]
+visible = false
 layout_mode = 2
+PlayerIndex = 3
 
 [node name="PlayerFour" parent="VBoxContainer/HBoxContainer" instance=ExtResource("2_brnoe")]
+visible = false
+layout_mode = 2
+PlayerIndex = 4
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="StartGameButton" type="Button" parent="VBoxContainer/CenterContainer"]
 layout_mode = 2
+theme = ExtResource("3_brnoe")
+text = "Start Game"

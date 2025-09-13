@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://wrexmrgcsvkg"]
+[gd_scene load_steps=11 format=3 uid="uid://wrexmrgcsvkg"]
 
 [ext_resource type="Script" uid="uid://dopmkyg752t38" path="res://Game.cs" id="1_t88pq"]
 [ext_resource type="Script" uid="uid://brlcv25ea2t7" path="res://Common/Managers/TransitionManager.cs" id="2_r0x5m"]
 [ext_resource type="Script" uid="uid://d4l3lfhiv6egd" path="res://Common/Managers/AudioManager.cs" id="3_3mrqo"]
 [ext_resource type="Script" uid="uid://d07ga5blmf7gk" path="res://Common/Managers/ScaffoldManager.cs" id="4_joorw"]
 [ext_resource type="PackedScene" uid="uid://dgpu2gs1npxhr" path="res://Scenes/UI/Views/TitleScreen/TitleScreen.tscn" id="5_7jktm"]
+[ext_resource type="Script" uid="uid://dv2xmy0eq1fqr" path="res://Common/Managers/PlayerManager.cs" id="6_ryrav"]
 
 [sub_resource type="Animation" id="Animation_ryrav"]
 length = 0.001
@@ -100,3 +101,6 @@ unique_name_in_owner = true
 script = ExtResource("4_joorw")
 
 [node name="TitleScreen" parent="ScaffoldManager" instance=ExtResource("5_7jktm")]
+
+[node name="PlayerManager" type="Node" parent="."]
+script = ExtResource("6_ryrav")
