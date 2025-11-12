@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://wrexmrgcsvkg"]
+[gd_scene load_steps=12 format=3 uid="uid://wrexmrgcsvkg"]
 
 [ext_resource type="Script" uid="uid://dopmkyg752t38" path="res://Game.cs" id="1_t88pq"]
 [ext_resource type="Script" uid="uid://brlcv25ea2t7" path="res://Common/Managers/TransitionManager.cs" id="2_r0x5m"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://d07ga5blmf7gk" path="res://Common/Managers/ScaffoldManager.cs" id="4_joorw"]
 [ext_resource type="PackedScene" uid="uid://dgpu2gs1npxhr" path="res://Scenes/UI/Views/TitleScreen/TitleScreen.tscn" id="5_7jktm"]
 [ext_resource type="Script" uid="uid://dv2xmy0eq1fqr" path="res://Common/Managers/PlayerManager.cs" id="6_ryrav"]
+[ext_resource type="PackedScene" uid="uid://db1c6cylyqy42" path="res://Scenes/Entities/Player/Player.tscn" id="7_eow3j"]
 
 [sub_resource type="Animation" id="Animation_ryrav"]
 length = 0.001
@@ -97,10 +98,14 @@ MusicNode = NodePath("Music")
 [node name="Music" type="AudioStreamPlayer" parent="AudioManager"]
 unique_name_in_owner = true
 
+[node name="PlayerManager" type="Node" parent="."]
+script = ExtResource("6_ryrav")
+
+[node name="Player" parent="PlayerManager" instance=ExtResource("7_eow3j")]
+
+[node name="Player2" parent="PlayerManager" instance=ExtResource("7_eow3j")]
+
 [node name="ScaffoldManager" type="Node" parent="."]
 script = ExtResource("4_joorw")
 
 [node name="TitleScreen" parent="ScaffoldManager" instance=ExtResource("5_7jktm")]
-
-[node name="PlayerManager" type="Node" parent="."]
-script = ExtResource("6_ryrav")
